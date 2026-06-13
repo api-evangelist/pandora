@@ -1,0 +1,75 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "hydra": "http://www.w3.org/ns/hydra/core#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://developer.pandora.com/",
+  "name": "Pandora GraphQL API",
+  "description": "The Pandora GraphQL API provides access to Pandora's music catalog and listener data, enabling developers to build applications with playback controls, search, user collection management, feedback (thumbs up/down), profile retrieval, and podcast support. All API access is gated by OAuth 2.0 bearer tokens and requires an approved partner relationship with Pandora.",
+  "url": "https://developer.pandora.com/",
+  "endpointURL": "https://ce.pandora.com/api/v1/graphql/graphql",
+  "documentation": "https://developer.pandora.com/docs/key-concepts/apis/",
+  "termsOfService": "https://developer.pandora.com/terms-and-conditions/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Pandora",
+    "url": "https://www.pandora.com/",
+    "sameAs": [
+      "https://developer.pandora.com/"
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "description": "Access requires an approved partner relationship with Pandora.",
+    "url": "https://developer.pandora.com/partners/join/"
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "name": "Search",
+      "description": "Full-text queries returning Artists, Songs, Stations, Podcasts, Playlists, and Albums"
+    },
+    {
+      "@type": "Action",
+      "name": "Playback",
+      "description": "Track playback triggered by search, curated lists, user collections, or recommendations"
+    },
+    {
+      "@type": "Action",
+      "name": "Feedback",
+      "description": "Thumbs up/down ratings to personalize the listening experience"
+    },
+    {
+      "@type": "Action",
+      "name": "Collection",
+      "description": "Management of listener's personalized music library"
+    },
+    {
+      "@type": "Action",
+      "name": "Profile",
+      "description": "Retrieve listener details including bio, name, and social connections"
+    },
+    {
+      "@type": "Action",
+      "name": "Podcast",
+      "description": "Access to podcast programs and episodes organized by season and year"
+    }
+  ],
+  "category": [
+    "Music",
+    "Streaming",
+    "Radio",
+    "Podcasts",
+    "Music Genome Project",
+    "Personalization"
+  ],
+  "hasDigitalDocumentPermission": {
+    "@type": "DigitalDocumentPermission",
+    "permissionType": "https://schema.org/ReadPermission",
+    "grantee": {
+      "@type": "Audience",
+      "audienceType": "Approved Partners"
+    }
+  }
+}
