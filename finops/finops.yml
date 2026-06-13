@@ -1,0 +1,72 @@
+name: Pandora API FinOps
+description: >-
+  Pandora API access is provided through a partner program with negotiated
+  commercial terms. There is no publicly documented per-call pricing or
+  self-serve billing model. API access is tied to subscription tier capabilities
+  (Free, Plus, Premium) and governed by the Pandora Developer Terms and
+  Conditions. Monetization of Pandora API-powered applications is strictly
+  limited to facilitating music purchases via third-party referral; direct
+  monetization through advertising or listener fees is prohibited.
+model: partner-negotiated
+pricingURL: https://developer.pandora.com/terms-and-conditions/
+costs:
+  - name: API Access
+    description: >-
+      No publicly listed per-call or per-request pricing. Commercial terms are
+      negotiated directly with Pandora's Business Development team as part of the
+      partner onboarding process.
+    type: negotiated
+    amount: not-disclosed
+  - name: Pandora Free Subscription
+    description: >-
+      Partners integrating at the Free (ad-supported) subscription tier. No
+      direct cost for the API tier capability itself; commercial terms vary by
+      partner agreement.
+    tier: Free
+    type: partner-negotiated
+  - name: Pandora Plus Subscription
+    description: >-
+      Partners integrating at the Plus (ad-free) subscription tier with
+      unlimited skips and replay capability.
+    tier: Plus
+    type: partner-negotiated
+  - name: Pandora Premium Subscription
+    description: >-
+      Partners integrating at the Premium subscription tier with full on-demand
+      playback, offline listening, and shuffle capabilities.
+    tier: Premium
+    type: partner-negotiated
+monetizationRestrictions:
+  - description: >-
+      Partners cannot charge listeners fees to access Pandora content through
+      their applications.
+  - description: >-
+      Partners cannot derive revenue from the application directly or indirectly
+      through advertising against Pandora content.
+  - description: >-
+      The only permitted monetization pathway is facilitating music purchases
+      from a third-party retailer via referral links.
+  - description: >-
+      Partners cannot use listener data for benchmarking, competitive analysis,
+      or metrics beyond what is required to operate the application.
+costOptimization:
+  - name: Caching
+    description: >-
+      Cache API responses where appropriate to avoid redundant calls and stay
+      within rate limits. User data must not be cached beyond 30 days of
+      listener inactivity.
+  - name: Development vs. Production
+    description: >-
+      Use the development application state (1,000 requests/hour) during
+      building and testing phases. Request production publishing only when
+      the application is ready for launch to gain higher rate limits.
+  - name: Pagination
+    description: >-
+      Use pagination with appropriate page sizes (max 50 items per request) to
+      reduce unnecessary data fetching and API calls.
+notes: >-
+  Pandora is no longer accepting new partner applications as of 2025. Existing
+  partners should manage API usage carefully to avoid throttling or revocation
+  under the terms and conditions, which grant Pandora broad discretion to limit
+  or terminate access. No SLA, uptime guarantee, or support obligation is
+  provided under the developer terms.

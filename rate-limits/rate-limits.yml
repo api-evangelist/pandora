@@ -1,0 +1,63 @@
+name: Pandora API Rate Limits
+description: >-
+  Pandora enforces rate limits on GraphQL API requests based on application
+  state (development vs. production). Development applications are subject to a
+  fixed hourly limit. Production limits are increased upon application review
+  and publishing approval. Pandora also reserves the right to throttle or
+  revoke access for excessive querying at any time per the terms and conditions.
+rateLimits:
+  - name: Development Rate Limit
+    description: >-
+      Applications in development state are limited to 1,000 requests per hour
+      across all GraphQL API calls. This limit applies while the application has
+      not yet been reviewed and published for production use.
+    state: development
+    limit: 1000
+    period: hour
+    scope: application
+  - name: Production Rate Limit
+    description: >-
+      Production applications have higher rate limits granted after Pandora
+      reviews and approves the application for publishing. Specific production
+      limits are not publicly disclosed and are set per partner agreement.
+    state: production
+    limit: not-publicly-disclosed
+    period: hour
+    scope: application
+    notes: >-
+      Contact Pandora's Business Development team or submit a publish request
+      through the Developer Center for production rate limit details.
+  - name: Skip Limit (Free Tier)
+    description: >-
+      Listeners on the Free subscription tier are subject to a limited number
+      of track skips per day, enforced by Pandora at the playback level.
+      This is a content licensing constraint, not a per-API-call rate limit.
+    scope: listener
+    period: day
+    tier: Free
+    notes: Exact skip count per day is not publicly specified.
+pagination:
+  - name: Collection Pagination
+    description: >-
+      GraphQL collection queries support both cursor-based and offset-based
+      pagination. The maximum page size (limit) for a single request is 50 items.
+    maxPageSize: 50
+    paginationType:
+      - cursor
+      - offset
+enforcement:
+  policy: >-
+    Pandora reserves the right to limit or revoke API access for applications
+    that excessively query systems or make service calls beyond what is required
+    for normal application operation. Developers are expected to cache data
+    appropriately and avoid unnecessary calls.
+  dataRetention: >-
+    User data cached by partner applications must be deleted immediately when a
+    listener logs out or becomes inactive for 30 or more days.
+tokenExpiration:
+  accessToken: 14400
+  accessTokenUnit: seconds
+  refreshToken: supported
+  clientCredentialsRefresh: >-
+    No refresh token is issued for client credentials grant. Re-fetch the
+    access token using client credentials when the token expires.

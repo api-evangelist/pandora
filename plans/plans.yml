@@ -1,0 +1,72 @@
+name: Pandora API Plans
+description: >-
+  Pandora API access is tied to Pandora subscription tiers available to
+  listeners. Partners can integrate at the Free, Plus, or Premium subscription
+  levels, each unlocking progressively richer playback and content capabilities.
+  API access itself requires an approved partner relationship with Pandora; there
+  is no self-serve public registration.
+plans:
+  - name: Free (Ad-Supported)
+    description: >-
+      Entry-level tier providing ad-supported access. Partners building on this
+      tier can offer station creation, search, thumbprint radio, full track
+      database access, thumb feedback, and limited skip functionality. Timeout
+      prompts occur most frequently at this tier.
+    label: Free
+    price: 0.00
+    currency: USD
+    features:
+      - Station creation and search
+      - Thumbprint Radio access
+      - Full track database access
+      - Thumb up/down feedback
+      - Limited skips per day
+      - Profile viewing
+      - Podcast playback
+    constraints:
+      - Limited number of skips per day (licensing restriction)
+      - Ads served during playback
+      - Frequent timeout prompts requiring listener interaction
+      - No offline listening
+      - No replay (rewind) capability
+  - name: Plus (Ad-Free)
+    description: >-
+      Mid-tier subscription removing advertisements and lifting skip limits.
+      Partners building on Plus can offer unlimited skipping, song replay
+      (subject to licensing), higher-quality audio, and less frequent timeout
+      prompts compared to Free.
+    label: Plus
+    features:
+      - All Free tier features
+      - Unlimited skipping
+      - Song replay (subject to licensing restrictions)
+      - Higher-quality audio streaming
+      - Less frequent timeout prompts
+      - Ad-free playback
+    constraints:
+      - Certain tracks cannot be replayed due to licensing restrictions
+      - No on-demand album or playlist playback
+      - No offline listening
+  - name: Premium (Ad-Free)
+    description: >-
+      Top-tier subscription with full on-demand capabilities. Partners building
+      on Premium can offer on-demand track, album, playlist, and podcast
+      playback, shuffle, and offline listening. Timeout prompts are least
+      frequent at this tier.
+    label: Premium
+    features:
+      - All Plus tier features
+      - On-demand playback of tracks, albums, playlists, and podcasts
+      - Shuffle for playlists and albums
+      - Offline listening (collection download)
+      - Least frequent timeout prompts
+      - Ad-free playback
+    constraints:
+      - Certain tracks restricted due to licensing
+notes: >-
+  Pandora is no longer accepting new partnership requests for API access as of
+  2025. Existing partners access the API through an approved partner
+  relationship and application credentials (client ID and secret) obtained via
+  the Pandora Developer Center. No public pricing for API access is published;
+  commercial terms are negotiated directly with Pandora's Business Development
+  team.
