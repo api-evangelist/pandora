@@ -1,87 +1,85 @@
 name: Pandora
-description: >-
-  Pandora is an internet radio and music streaming service powered by the Music
-  Genome Project, offering personalized radio stations and on-demand streaming
-  with a catalog of over 30 million tracks including songs, comedy albums,
-  podcasts, and more. The Pandora GraphQL API enables developers to build
-  applications that access stations, tracks, artist information, user listening
-  history, feedback, playlists, and personalized radio content across Free,
-  Plus, and Premium subscription tiers.
+description: Pandora is an internet radio and music streaming service powered by the
+  Music Genome Project, offering personalized radio stations and on-demand streaming
+  with a catalog of over 30 million tracks including songs, comedy albums, podcasts,
+  and more. The Pandora GraphQL API enables developers to build applications that
+  access stations, tracks, artist information, user listening history, feedback, playlists,
+  and personalized radio content across Free, Plus, and Premium subscription tiers.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Music
-  - Streaming
-  - Radio
-  - Podcasts
-  - Music Genome Project
-  - Personalization
+- Music
+- Streaming
+- Radio
+- Podcasts
+- Music Genome Project
+- Personalization
 created: '2026-06-13'
 modified: '2026-06-13'
 url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - name: Pandora GraphQL API
-    description: >-
-      The Pandora GraphQL API provides access to Pandora's music catalog and
-      listener data, enabling developers to build applications with playback
-      controls, search, user collection management, feedback (thumbs up/down),
-      profile retrieval, and podcast support. All API access is gated by OAuth
-      2.0 bearer tokens and requires an approved partner relationship with
-      Pandora.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.pandora.com/
-    baseURL: https://ce.pandora.com/api/v1/graphql/graphql
-    tags:
-      - Music
-      - Radio
-      - Stations
-      - Tracks
-      - Playlists
-      - Podcasts
-      - Search
-      - Personalization
-    properties:
-      - type: Documentation
-        url: https://developer.pandora.com/docs/key-concepts/apis/
-      - type: OpenAPI
-        url: https://developer.pandora.com/docs/reference/graphql/
-      - type: Authentication
-        url: https://developer.pandora.com/docs/key-concepts/authorization-oauth2/
-      - type: GettingStarted
-        url: https://developer.pandora.com/docs/getting-started/accessing-developer-portal/
-      - type: TermsOfService
-        url: https://developer.pandora.com/terms-and-conditions/
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/rate-limits/rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/finops/finops.yml
-    contact:
-      - FN: Pandora Developer Support
-        url: https://developer.pandora.com/docs/overview/support-and-api-features/
-    meta:
-      - name: Partner Program
-        value: https://developer.pandora.com/partners/join/
-common:
-  - type: Portal
-    url: https://developer.pandora.com/
+- name: Pandora GraphQL API
+  description: The Pandora GraphQL API provides access to Pandora's music catalog
+    and listener data, enabling developers to build applications with playback controls,
+    search, user collection management, feedback (thumbs up/down), profile retrieval,
+    and podcast support. All API access is gated by OAuth 2.0 bearer tokens and requires
+    an approved partner relationship with Pandora.
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.pandora.com/
+  baseURL: https://ce.pandora.com/api/v1/graphql/graphql
+  tags:
+  - Music
+  - Radio
+  - Stations
+  - Tracks
+  - Playlists
+  - Podcasts
+  - Search
+  - Personalization
+  properties:
   - type: Documentation
     url: https://developer.pandora.com/docs/key-concepts/apis/
+  - type: OpenAPI
+    url: https://developer.pandora.com/docs/reference/graphql/
   - type: Authentication
     url: https://developer.pandora.com/docs/key-concepts/authorization-oauth2/
   - type: GettingStarted
     url: https://developer.pandora.com/docs/getting-started/accessing-developer-portal/
   - type: TermsOfService
     url: https://developer.pandora.com/terms-and-conditions/
-  - type: PartnerAccess
-    url: https://developer.pandora.com/docs/overview/partner-access/
   - type: Plans
     url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/plans/plans.yml
   - type: RateLimits
     url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/finops/finops.yml
+  - url: graphql/pandora-graphql.md
+    type: GraphQL
+  contact:
+  - FN: Pandora Developer Support
+    url: https://developer.pandora.com/docs/overview/support-and-api-features/
+  meta:
+  - name: Partner Program
+    value: https://developer.pandora.com/partners/join/
+common:
+- type: Portal
+  url: https://developer.pandora.com/
+- type: Documentation
+  url: https://developer.pandora.com/docs/key-concepts/apis/
+- type: Authentication
+  url: https://developer.pandora.com/docs/key-concepts/authorization-oauth2/
+- type: GettingStarted
+  url: https://developer.pandora.com/docs/getting-started/accessing-developer-portal/
+- type: TermsOfService
+  url: https://developer.pandora.com/terms-and-conditions/
+- type: PartnerAccess
+  url: https://developer.pandora.com/docs/overview/partner-access/
+- type: Plans
+  url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/plans/plans.yml
+- type: RateLimits
+  url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/rate-limits/rate-limits.yml
+- type: FinOps
+  url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/finops/finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

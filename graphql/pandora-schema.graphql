@@ -1,0 +1,230 @@
+# Pandora ERC-404 GraphQL Schema
+#
+# Conceptual SDL derived from the on-chain ERC-404 contract interface:
+#   https://github.com/Pandora-Labs-Org/erc404/blob/main/contracts/interfaces/IERC404.sol
+#   https://github.com/Pandora-Labs-Org/erc404/blob/main/contracts/lib/ERC721Events.sol
+#   https://github.com/Pandora-Labs-Org/erc404/blob/main/contracts/lib/ERC20Events.sol
+#
+# No canonical hosted subgraph exists for Pandora ERC-404 as of 2026-06.
+# This schema is intended for indexer implementations (e.g., The Graph Protocol).
+
+"""
+A wallet address that holds ERC-20 and/or ERC-721 tokens.
+Corresponds to balanceOf / erc20BalanceOf / erc721BalanceOf on IERC404.
+"""
+type Account {
+  "Ethereum address (lowercase hex)"
+  id: ID!
+  "Raw ERC-20 balance in smallest unit (18 decimals)"
+  erc20Balance: BigInt!
+  "Number of ERC-721 NFTs owned (length of the owned[] array)"
+  erc721Balance: Int!
+  "Whether this address is exempt from ERC-721 transfer logic"
+  erc721TransferExempt: Boolean!
+  "ERC-721 token ids currently owned"
+  ownedTokens: [Token!]! @derivedFrom(field: "owner")
+  "ERC-20 transfers sent by this account"
+  erc20TransfersSent: [ERC20Transfer!]! @derivedFrom(field: "from")
+  "ERC-20 transfers received by this account"
+  erc20TransfersReceived: [ERC20Transfer!]! @derivedFrom(field: "to")
+  "ERC-721 transfers sent by this account"
+  erc721TransfersSent: [ERC721Transfer!]! @derivedFrom(field: "from")
+  "ERC-721 transfers received by this account"
+  erc721TransfersReceived: [ERC721Transfer!]! @derivedFrom(field: "to")
+}
+
+"""
+An ERC-721 NFT token within the ERC-404 contract.
+Token ids use ID_ENCODING_PREFIX (1 << 255) to distinguish them from ERC-20 amounts.
+"""
+type Token {
+  "Encoded token id (includes ID_ENCODING_PREFIX)"
+  id: ID!
+  "Raw numeric token id (without encoding prefix)"
+  tokenId: BigInt!
+  "Current owner account"
+  owner: Account!
+  "URI for token metadata (from tokenURI())"
+  tokenURI: String
+  "Address approved to transfer this specific token"
+  approved: Account
+  "ERC-721 transfer history for this token"
+  transfers: [ERC721Transfer!]! @derivedFrom(field: "token")
+}
+
+"""
+ERC-20 Transfer event — emitted by ERC20Events.Transfer(from, to, amount).
+Represents a fungible token amount moving between addresses.
+"""
+type ERC20Transfer {
+  "tx hash + log index"
+  id: ID!
+  from: Account!
+  to: Account!
+  "Amount transferred in smallest unit (18 decimals)"
+  amount: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+ERC-721 Transfer event — emitted by ERC721Events.Transfer(from, to, id).
+Represents an NFT moving between addresses.
+Zero address as from = mint; zero address as to = burn.
+"""
+type ERC721Transfer {
+  "tx hash + log index"
+  id: ID!
+  from: Account!
+  to: Account!
+  token: Token!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+ERC-20 allowance approval — emitted by ERC20Events.Approval(owner, spender, value).
+"""
+type ERC20Approval {
+  "owner address + spender address"
+  id: ID!
+  owner: Account!
+  spender: Account!
+  "Approved ERC-20 allowance in smallest unit"
+  value: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+ERC-721 per-token approval — emitted by ERC721Events.Approval(owner, spender, id).
+"""
+type ERC721Approval {
+  "tx hash + log index"
+  id: ID!
+  owner: Account!
+  spender: Account!
+  token: Token!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+Operator approval for all NFTs — emitted by ERC721Events.ApprovalForAll(owner, operator, approved).
+"""
+type ApprovalForAll {
+  "owner address + operator address"
+  id: ID!
+  owner: Account!
+  operator: Account!
+  approved: Boolean!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+"""
+Aggregate statistics for the ERC-404 contract (singleton, id = "global").
+"""
+type Protocol {
+  id: ID!
+  "Token name from name()"
+  name: String!
+  "Token symbol from symbol()"
+  symbol: String!
+  "Decimals (18 for ERC-404)"
+  decimals: Int!
+  "Total ERC-20 supply from erc20TotalSupply()"
+  erc20TotalSupply: BigInt!
+  "Total ERC-721 supply from erc721TotalSupply() — equals minted counter"
+  erc721TotalSupply: BigInt!
+  "Total number of distinct holder accounts"
+  holderCount: Int!
+  "Total ERC-20 transfer event count"
+  erc20TransferCount: BigInt!
+  "Total ERC-721 transfer event count"
+  erc721TransferCount: BigInt!
+}
+
+type Query {
+  account(id: ID!): Account
+  accounts(
+    first: Int
+    skip: Int
+    orderBy: String
+    orderDirection: String
+    where: AccountFilter
+  ): [Account!]!
+
+  token(id: ID!): Token
+  tokens(
+    first: Int
+    skip: Int
+    orderBy: String
+    orderDirection: String
+    where: TokenFilter
+  ): [Token!]!
+
+  erc20Transfer(id: ID!): ERC20Transfer
+  erc20Transfers(
+    first: Int
+    skip: Int
+    orderBy: String
+    orderDirection: String
+    where: ERC20TransferFilter
+  ): [ERC20Transfer!]!
+
+  erc721Transfer(id: ID!): ERC721Transfer
+  erc721Transfers(
+    first: Int
+    skip: Int
+    orderBy: String
+    orderDirection: String
+    where: ERC721TransferFilter
+  ): [ERC721Transfer!]!
+
+  erc20Approval(id: ID!): ERC20Approval
+  erc20Approvals(first: Int, skip: Int): [ERC20Approval!]!
+
+  erc721Approval(id: ID!): ERC721Approval
+  erc721Approvals(first: Int, skip: Int): [ERC721Approval!]!
+
+  approvalForAll(id: ID!): ApprovalForAll
+  approvalsForAll(first: Int, skip: Int): [ApprovalForAll!]!
+
+  protocol(id: ID!): Protocol
+}
+
+input AccountFilter {
+  erc721TransferExempt: Boolean
+  erc20Balance_gt: BigInt
+  erc721Balance_gt: Int
+}
+
+input TokenFilter {
+  owner: ID
+  approved: ID
+}
+
+input ERC20TransferFilter {
+  from: ID
+  to: ID
+  amount_gt: BigInt
+  blockTimestamp_gte: BigInt
+  blockTimestamp_lte: BigInt
+}
+
+input ERC721TransferFilter {
+  from: ID
+  to: ID
+  token: ID
+  blockTimestamp_gte: BigInt
+  blockTimestamp_lte: BigInt
+}
+
+scalar BigInt
+scalar Bytes
