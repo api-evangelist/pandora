@@ -5,7 +5,7 @@ description: Pandora is an internet radio and music streaming service powered by
   and more. The Pandora GraphQL API enables developers to build applications that
   access stations, tracks, artist information, user listening history, feedback, playlists,
   and personalized radio content across Free, Plus, and Premium subscription tiers.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Music
 - Streaming
@@ -24,7 +24,7 @@ apis:
     search, user collection management, feedback (thumbs up/down), profile retrieval,
     and podcast support. All API access is gated by OAuth 2.0 bearer tokens and requires
     an approved partner relationship with Pandora.
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.pandora.com/
   baseURL: https://ce.pandora.com/api/v1/graphql/graphql
   tags:
