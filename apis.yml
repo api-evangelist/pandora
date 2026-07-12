@@ -62,6 +62,8 @@ apis:
   - name: Partner Program
     value: https://developer.pandora.com/partners/join/
 common:
+- type: DomainSecurity
+  url: security/pandora-domain-security.yml
 - type: Portal
   url: https://developer.pandora.com/
 - type: Documentation
