@@ -36,6 +36,7 @@ tags:
 - Podcasts
 - Music Genome Project
 - Personalization
+- Audio
 created: '2026-06-13'
 modified: '2026-06-13'
 url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/apis.yml
@@ -76,8 +77,6 @@ apis:
     url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/pandora/refs/heads/main/finops/finops.yml
-  - url: graphql/pandora-graphql.md
-    type: GraphQL
   contact:
   - FN: Pandora Developer Support
     url: https://developer.pandora.com/docs/overview/support-and-api-features/
