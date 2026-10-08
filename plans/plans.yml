@@ -74,3 +74,28 @@ notes: >-
   the Pandora Developer Center. No public pricing for API access is published;
   commercial terms are negotiated directly with Pandora's Business Development
   team.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Free (Ad-Supported)
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Plus (Ad-Free)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Premium (Ad-Free)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
