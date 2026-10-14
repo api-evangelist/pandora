@@ -1,0 +1,23 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- https://plugins.jetbrains.com/
+marketplace_apps: []
+edges:
+- partner_name: JetBrains Marketplace
+  partner: jetbrains
+  partner_match: aggregator
+  type: marketplace
+  marketplace: jetbrains
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://plugins.jetbrains.com/vendor/4ea67b5e-334c-4aa7-9264-b9bb389d6b74
+  listing_count: 1
+  apps:
+  - Multiple File Kotlin Converter
+  publisher_name: Pandora Media
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+source:
+- https://plugins.jetbrains.com/
