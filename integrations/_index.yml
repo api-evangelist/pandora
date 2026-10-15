@@ -15,3 +15,26 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: pandora-ddex-digital-data-exchange
+  label: DDEX (Digital Data Exchange)
+  partner_name: DDEX (Digital Data Exchange)
+  category: music metadata and rights messaging standard
+  type: register
+  channel: standard-directory
+  evidence: https://ddex.net/membership/current-members/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: DDEX current members (ddex.net/membership/current-members)
+    spec_file: null
+    role: ddex-charter-member
+    registered_name: Pandora Media Inc
+    register_id: Pandora Media Inc
+    tier: charter
+    matched_domain: pandora.com
+    matched_by: domain
+    identity: wikidata Q1196431 'Pandora' P856 https://pandora.com
+    detected_by: sweep-media.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null

@@ -1,7 +1,9 @@
 generated: '2026-10-14'
 method: searched
 checked:
+- https://ddex.net/membership/current-members/
 - https://plugins.jetbrains.com/
+- https://raw.githubusercontent.com/c2pa-org/conformance-public/main/conforming-products/conforming-products-list.json
 marketplace_apps: []
 edges:
 - partner_name: JetBrains Marketplace
@@ -19,5 +21,28 @@ edges:
   publisher_name: Pandora Media
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: DDEX (Digital Data Exchange)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://ddex.net/membership/current-members/
+  category: music metadata and rights messaging standard
+  contract_reference:
+    register: DDEX current members (ddex.net/membership/current-members)
+    spec_file: null
+    role: ddex-charter-member
+    registered_name: Pandora Media Inc
+    register_id: Pandora Media Inc
+    tier: charter
+    matched_domain: pandora.com
+    matched_by: domain
+    identity: wikidata Q1196431 'Pandora' P856 https://pandora.com
+    detected_by: sweep-media.py
+    detected: '2026-10-15'
+  detected_by: sweep-media.py
+  first_seen: '2026-10-15'
 source:
 - https://plugins.jetbrains.com/
