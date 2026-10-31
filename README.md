@@ -64,12 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Pandora is an internet radio and music streaming service powered by the Music Genome Project, offering personalized radio stations and on-demand streaming with a catalog of over 30 million tracks including songs, comedy albums, podcasts, and more.
+Pandora is an internet radio and music streaming service powered by the Music Genome Project, offering personalized radio stations and on-demand streaming with a catalog of over 30 million tracks including songs, comedy albums, podcasts, and more. The Pandora GraphQL API enables developers to build applications that access stations, tracks, artist information, user listening history, feedback, playlists, and personalized radio content across Free, Plus, and Premium subscription tiers.
 
-The Pandora GraphQL API enables approved partners to build applications that access stations, tracks, artist information, user listening history, feedback, playlists, and personalized radio content.
+**Areas:** Music · Streaming · Radio · Podcasts · Music Genome Project · Personalization · Audio
 
-**Developer Portal:** https://developer.pandora.com/  
-**API Documentation:** https://developer.pandora.com/docs/key-concepts/apis/  
-**Authentication:** https://developer.pandora.com/docs/key-concepts/authorization-oauth2/  
-**Terms of Service:** https://developer.pandora.com/terms-and-conditions/  
-**Partner Access:** https://developer.pandora.com/partners/join/
+## Pandora on APIs.io
+
+Everything profiled for Pandora is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/pandora/](https://apis.io/providers/pandora/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Pandora GraphQL API](https://apis.io/apis/pandora/pandora-graphql-api/) — The Pandora GraphQL API provides access to Pandora's music catalog and listener data, enabling developers to build applications with playback controls,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### GraphQL (1)
+
+GraphQL schemas.
+
+- [Moved to /providers/pandora/](https://apis.io/graphqls/pandora/pandora-graphql/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apis Context](https://apis.io/jsonld/pandora/apis/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Pandora Domain Security](https://apis.io/security/pandora/pandora-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/pandora/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/pandora/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/pandora/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.pandora.com/)
+- [Documentation](https://developer.pandora.com/docs/key-concepts/apis/)
+- [Getting started](https://developer.pandora.com/docs/getting-started/accessing-developer-portal/)
+- [Terms of service](https://developer.pandora.com/terms-and-conditions/)
+
+## API Evangelist rating
+
+**Kin Score 28.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 30.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 18.4 |
+
+**Agent readiness 18.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/pandora/](https://apis.io/providers/pandora/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Pandora: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/pandora/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
